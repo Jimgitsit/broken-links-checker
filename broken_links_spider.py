@@ -20,10 +20,10 @@ class BrokenLinksSpider(CrawlSpider):
     allowed_domains = config.allowed_domains
     start_urls = config.start_urls
     handle_httpstatus_list = [404]
-    rules = (Rule(LinkExtractor(tags=config.tags, allow=(config.match)), callback='parse_item', follow=config.follow),)
+    rules = (Rule(LinkExtractor(tags=(config.tags), allow=(config.match)), callback='parse_item', follow=config.follow),)
 
     def parse_item(self, response):
-        if response.status == 200 and config.showPassed == True:
+        if response.status == 200 and config.show_passed == True:
             item = GoodItem()
             item['status'] = response.status
             item['url'] = response.url
