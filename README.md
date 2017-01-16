@@ -1,8 +1,10 @@
+Updated and modified from https://github.com/alecxe/broken-links-checker
+
 Usage
 -------------
 
-Configure urls to parse in config.py. Then, run:
+Copy config-sample.py to config.py and modify as needed (should be pretty self explanatory if you know how to use Scrapy - https://scrapy.org/)
 
-    scrapy runspider broken_links_spider.py -o output.json
+Execute like so:
 
-Then check 404 items in the output.json file. 
+`scrapy runspider broken_links_spider.py -o output.json`
